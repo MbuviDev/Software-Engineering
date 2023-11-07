@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { AppContext } from '../App';
 
 const BookingDetails = () => {
-  const [passengers, setPassengers] = useState([]);
+  const trains = useContext(AppContext);
+
+  const [passengers, setPassengers] = useState([]); // Define passengers state variable
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -12,12 +15,12 @@ const BookingDetails = () => {
       gender: 'Passenger Gender',
     };
 
-    setPassengers([...passengers, newPassenger]);
+    setPassengers([...passengers, newPassenger]); // Use setPassengers to update state
 
     // Process payment and generate e-ticket
   };
 
-  const handleCancel = (passengerIndex) => { // Pass passenger index as argument
+  const handleCancel = (passengerIndex) => {
     const updatedPassengers = [...passengers];
     updatedPassengers.splice(passengerIndex, 1);
     setPassengers(updatedPassengers);
@@ -63,7 +66,8 @@ value="other">Other</option>
  
 type="button"
  
-onClick={() => handleCancel(index)}>Cancel</button>  <button type="submit">Book Ticket</button>
+onClick={() => handleCancel}>Cancel</button>
+        <button type="submit">Book Ticket</button>
       </form>
 
       <table className="table">
@@ -77,14 +81,14 @@ onClick={() => handleCancel(index)}>Cancel</button>  <button type="submit">Book 
         </thead>
 
         <tbody>
-          {passengers.map((passenger, index) => (
-            <tr key={passenger.id}>
-              <td>{passenger.name}</td>
-              <td>{passenger.age}</td>
-              <td>{passenger.gender}</td>
-              <td>
-                <button type="button" onClick={() => handleCancel(index)}>Cancel</button>
-              </td>
+          {trains.map((train) => (
+            <tr key={train.id}>
+              <td>{train.name}</td>
+              <td>{train.sourceStation}</td>
+              <td>{train.destinationStation}</td>
+              <td>{train.departureTime}</td>
+              <td>{train.arrivalTime}</td>
+              <td>{train.fare}</td>
             </tr>
           ))}
         </tbody>

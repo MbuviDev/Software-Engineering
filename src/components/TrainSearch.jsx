@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from '../App';
 
-const TrainSearch = ({ trains }) => {
+const TrainSearch = () => {
+  const trains = useContext(AppContext);
+
   return (
     <div>
       <h2>Search Trains</h2>

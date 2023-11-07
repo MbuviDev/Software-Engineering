@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from '../App';
 
-const TicketsList = ({ tickets }) => {
+const TicketsList = () => {
+  const trains = useContext(AppContext);
+
   return (
     <div className="ticket-list">
       <h2>Ticket List</h2>
@@ -18,14 +21,14 @@ const TicketsList = ({ tickets }) => {
         </thead>
 
         <tbody>
-          {tickets.map((ticket) => (
-            <tr key={ticket.id}>
-              <td>{ticket.origin}</td>
-              <td>{ticket.destination}</td>
-              <td>{ticket.departureDate}</td>
-              <td>{ticket.arrivalDate}</td>
-              <td>{ticket.price}</td>
-              <td>{ticket.airline}</td>
+          {trains.map((train) => (
+            <tr key={train.id}>
+              <td>{train.sourceStation}</td>
+              <td>{train.destinationStation}</td>
+              <td>{train.departureTime}</td>
+              <td>{train.arrivalTime}</td>
+              <td>{train.fare}</td>
+              <td>Indian Railways</td>
             </tr>
           ))}
         </tbody>
