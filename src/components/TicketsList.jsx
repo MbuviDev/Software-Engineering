@@ -6,7 +6,7 @@ const TicketsList = () => {
 
   return (
     <div className="ticket-list bg-blue-100 grid rounded-lg p-8">
-      <h2>Ticket List</h2>
+      <h2 className='font-serif text-2xl'>Ticket List</h2>
 
       <table>
         <thead>
