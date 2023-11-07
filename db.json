@@ -1,0 +1,50 @@
+{
+    "trains": [
+      {
+        "id": 1,
+        "name": "Rajdhani Express",
+        "sourceStation": "New Delhi Railway Station (NDLS)",
+        "destinationStation": "Kolkata Sealdah Railway Station (SDAH)",
+        "departureTime": "08:00",
+        "arrivalTime": "20:00",
+        "fare": 1500
+      },
+      {
+        "id": 2,
+        "name": "Shatabdi Express",
+        "sourceStation": "Mumbai Chhatrapati Shivaji Maharaj Terminus (CSMT)",
+        "destinationStation": "Ahmedabad Junction Railway Station (ADI)",
+        "departureTime": "06:00",
+        "arrivalTime": "14:00",
+        "fare": 1200
+      },
+      {
+        "id": 3,
+        "name": "Duronto Express",
+        "sourceStation": "Chennai Central Railway Station (MAS)",
+        "destinationStation": "Hyderabad Deccan Railway Station (HYB)",
+        "departureTime": "12:00",
+        "arrivalTime": "22:00",
+        "fare": 800
+      },
+      {
+        "id": 4,
+        "name": "Vande Bharat Express",
+        "sourceStation": "Howrah Junction Railway Station (HWH)",
+        "destinationStation": "Lucknow Charbagh Railway Station (LKO)",
+        "departureTime": "10:00",
+        "arrivalTime": "18:00",
+        "fare": 1000
+      },
+      {
+        "id": 5,
+        "name": "Tejas Express",
+        "sourceStation": "Bengaluru City Railway Station (SBC)",
+        "destinationStation": "Pune Junction Railway Station (PUNE)",
+        "departureTime": "16:00",
+        "arrivalTime": "23:00",
+        "fare": 600
+      }
+    ]
+  }
+  

@@ -1,12 +1,6 @@
-import React, { useState, useEffect } from
- 
-'react';
-import axios from
- 
-'axios';
-import { BrowserRouter as Router, Routes, Route, Link } from
- 
-'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 import TrainSearch from './components/TrainSearch';
 import BookingDetails from './components/BookingDetails';
@@ -14,7 +8,7 @@ import TicketsList from './components/TicketsList';
 
 export const AppContext = React.createContext();
 
-const App = () => {
+export default function App () {
   const [trains, setTrains] = useState([]);
 
   useEffect(() => {
@@ -24,13 +18,14 @@ const App = () => {
   }, []);
 
   return (
+    <div className="bg-gray-200 h-screen p-8 rounded-lg"> 
     <AppContext.Provider value={trains}>
       <Router>
-        <div>
-          <h1>Railway Reservation System</h1>
+        <div className='bg-white p-8'>
+          <h1 className='font-sans text-3xl flex '>Railway Reservation System</h1> <br></br>
 
-          <nav>
-            <Link to="/">Search Trains</Link>
+          <nav className=' gap-20 flex justify-center text-xl text-blue-500 content-center' >
+            <Link to="/">Search Trains</Link> 
             <Link to="/booking">Booking Details</Link>
             <Link to="/tickets">Tickets</Link>
           </nav>
@@ -43,7 +38,7 @@ const App = () => {
         </div>
       </Router>
     </AppContext.Provider>
+    </div>
   );
 };
 
-export default App;

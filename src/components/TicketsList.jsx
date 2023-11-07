@@ -5,7 +5,7 @@ const TicketsList = () => {
   const trains = useContext(AppContext);
 
   return (
-    <div className="ticket-list">
+    <div className="ticket-list bg-blue-100 grid rounded-lg p-8">
       <h2>Ticket List</h2>
 
       <table>

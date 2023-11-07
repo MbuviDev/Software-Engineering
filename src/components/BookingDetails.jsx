@@ -3,7 +3,6 @@ import { AppContext } from '../App';
 
 const BookingDetails = () => {
   const trains = useContext(AppContext);
-
   const [passengers, setPassengers] = useState([]); // Define passengers state variable
 
   const handleSubmit = (event) => {
@@ -27,10 +26,10 @@ const BookingDetails = () => {
   };
 
   return (
-    <div>
-      <h2>Booking Details</h2>
+    <div className='p-6 bg-blue-100 rounded-lg grid'>
+      <h2 className='font-serif text-2xl '>Booking Details</h2>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className='text-xl font-serif gap-4' >
         <label>Passenger Name:</label>
         <input type="text" />
 
@@ -40,33 +39,13 @@ const BookingDetails = () => {
         <label>Passenger Gender:</label>
 
         
-<select>
-
-          
-<option
- 
-value="male">Male</option>
-
-          
-<option
- 
-value="female">Female</option>
-
-          
-<option
- 
-value="other">Other</option>
-
-        
+<select>       
+<option value="male">Male</option>        
+<option value="female">Female</option>     
+<option value="other">Other</option>   
 </select>
-
-
-        
-<button
- 
-type="button"
- 
-onClick={() => handleCancel}>Cancel</button>
+       
+<button type="button" onClick={() => handleCancel}>Cancel</button>
         <button type="submit">Book Ticket</button>
       </form>
 

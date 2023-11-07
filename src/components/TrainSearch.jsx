@@ -4,24 +4,43 @@ import { AppContext } from '../App';
 const TrainSearch = () => {
   const trains = useContext(AppContext);
 
-  return (
-    <div>
-      <h2>Search Trains</h2>
+  const trainNames = ['Rajdhani Express', 'Shatabdi Express', 'Duronto Express', 'Vande Bharat Express', 'Tejas Express'];
+  const sourceStations = ['Nairobi Railway Station', 'Machakos Railway Station', 'Kiambu Railway Station', 'Wajir Railway Station', 'Mombasa Railway Station'];
+  const destinationStations = ['Nairobi Railway Station', 'Machakos Railway Station', 'Kiambu Railway Station', 'Wajir Railway Station', 'Mombasa Railway Station'];
 
-      <form>
+  return (
+    <div className='p-6 bg-blue-100 rounded-lg grid'>
+      <h2 className='font-serif text-2xl '>Search Trains</h2><br></br>
+
+      <form className='text-xl font-serif gap-4'> 
         <label>Train Name:</label>
-        <input type="text" />
+        <select>
+          <option value="">Select Train</option>
+          {trainNames.map((trainName) => (
+            <option key={trainName} value={trainName}>{trainName}</option>
+          ))}
+        </select>
 
         <label>Source Station:</label>
-        <input type="text" />
+        <select>
+          <option value="">Select Source Station</option>
+          {sourceStations.map((sourceStation) => (
+            <option key={sourceStation} value={sourceStation}>{sourceStation}</option>
+          ))}
+        </select>
 
         <label>Destination Station:</label>
-        <input type="text" />
+        <select>
+          <option value="">Select Destination Station</option>
+          {destinationStations.map((destinationStation) => (
+            <option key={destinationStation} value={destinationStation}>{destinationStation}</option>
+          ))}
+        </select>
 
         <label>Journey Date:</label>
         <input type="date" />
 
-        <button type="submit">Search</button>
+        <button type="submit" className='bg-blue-400 rounded-lg px-2' >Submit</button>
       </form>
 
       <table className="table">
